@@ -29,7 +29,7 @@ fi
 
 # backup excution
 # mark the time in the err log file
-echo "$(date)" >>$bak_folder/$log_error
+echo -e "$(date)\n" >>$bak_folder/$log_error
 tar -Pzcf $bak_folder/$bak_file $apache_folder 1>>/dev/null 2>>$bak_folder/$log_error
 
 # EOF
