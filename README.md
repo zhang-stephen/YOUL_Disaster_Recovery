@@ -22,7 +22,9 @@ This system is based on bash.
 > As well konwn, everything is file in the linux, and all of files have three basic permissions, there is the list of them.
 >
 >> Read -> r -> 4
+>>
 >> Write -> w -> 2
+>> 
 >> Excution -> x -> 1
 >
 > In fact, these numbers are Octal, so we can write them as (0421)<sub>o</sub> or (0421)<sub>8</sub>.
