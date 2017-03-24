@@ -38,3 +38,31 @@ This system is based on bash.
 >></code>
 >>
 >
+> You can see the infomation of this file called example.txt, and the beginning of the output line is permission of this file. That means the Root user can read & write this file, but the Root UserGroup and the others only can read it, and no one can run it.
+>>
+>> if we replace the letters to numbers, it should be -42-4--4--(the first "-" is not useful for us now, we get the permission from the second letter), but we still have a simple way to express it.
+>>
+>> these are numbers, so we can add up them, and this permission can be expressed as 644, the rule is as Following:
+>>
+>>> above all, the command <code>ls -l</code> tell us the owner and the owner group are whom. 
+>>>
+>>> if the owner has this permission, the sum = 0 + permission1 + permission2 + permission3, if owner has permission as rwx, the sum = 4 + 2 + 1 =7, other calculating is similar to owner.
+>>>
+>>> so the permission of example.txt can be 644.
+>>>
+> But How to Change the Permission?
+>> 
+>> Run command <code>chmod</code>.
+>>
+>> for example, if we want to Change permission,we can run these command.
+>>
+>> If you want to change permission to -rwxr-xr-x,you can use <code>chmod 755 files</code>.
+>>
+>> we use 755 for files and 644 for folders, if you want to change permission of folder and files in it, you can use this command <code> chmod 755 -R folder </code>.
+>>
+>> If you think these ways aren't useful for you, you can use Google or Baidu to search with keyword "change permission".
+>
+> This help is over.
+>
+6. Some help of Crond...
+
