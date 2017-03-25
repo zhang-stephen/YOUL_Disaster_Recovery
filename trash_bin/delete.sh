@@ -4,7 +4,7 @@
 # If you want not to delete important data by mistake, you'd batter use this
 
 # Time 
-date="$(date +%Y%m%d)"
+Time="$(date +%Y%m%d_%H_%M_%S)"
 
 # Trash Bin Folder
 Trash_Bin="/home/.trash/delete"
@@ -23,33 +23,31 @@ fi
 # If no option follows this command delete, then outputs these.
 if [ $# -eq 0 ]; then
 	echo "Usage: delete file0 [file1 file2...]"
-	echo -e "If this options contain -f, then the script will exec \"rm\" directly\n"
+	echo -e "If this options contain -f, then the script will exec \"rm\" directly"
 fi
 
 # If options contain the -f, delete the file by rm
-while getopts "bhdfiPRrvW" opt
+while getopts "bfhiRrt" opt
 	do 
 		case $opt in
 			f) 
 				exec "$realrm" $@
 				;;
-			b)
-				mv $@ "$Trash_Bin/"
-				;;
-			h)
-				echo -e "Usage: move file/folder to Trash Bin"
-				echo -e "delete -b file/folder [file1/folder1...] -> mv file/folder trash_bin_folder"
-				echo -e "delete -d empty_folder -> rm -d empty_folder"
-				echo -e "delete -f file -> rm -f file"
-				echo -e "delete -h -> View the Help information"
-				echo -e "delete -R folder -> rm -R folder"
-				echo -e "delete -r folder -> rm -r folder"
-				;;
+			*)
+				# do nothing.
 		esac
 	done
  
 # Ask user is sure to delete files
-#echo -ne "Are you sure you want to move the files to the Trash? [Y/N]:\a"
-#if [ $reply="y" -o $reply="Y" ]; then
-#	mv $file $Trash_Bin/$date_$file
-#fi
+echo -ne "Are you sure you want to move the files to the Trash? [Y/N]:\a"
+read reply
+if [ $reply="y" -o $reply="Y" ]; then
+	mv -i $@ $Trash_Bin/$Time_$file
+fi
+
+# Create log file to mask the all infomation of the deleted files
+# Absolute Path
+# Delete Time
+# etc.
+
+# EOF
