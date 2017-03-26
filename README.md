@@ -90,7 +90,7 @@ This system is based on bash.
 >>> </code>
 >>>
 >>> That means every 15 minutes exec minutes run command in 25th every months
-> Help is over, if you need more help, please use Google or Baidu.
+> Help is over, if you need more help, please use Google or Baidu.     
 >> <https://www.google.com>    
 >> <https://www.badiu.com>
 
