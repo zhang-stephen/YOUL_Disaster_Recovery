@@ -13,8 +13,8 @@ This system is based on bash.
 4. Following are my plans:
 - [x] backup som important files & folders
 - [ ] Run a check to check the Performance of your servers or vitrual machines
-- [ ] Create a trash bin on the linux
-- [ ] ~~*etc...*~~~
+- [x] Create a trash bin on the linux
+- [x] ~~*etc...*~~~
 
 5. Some help of Permissions...
 > You should give the Permission X to scripts before using them.
@@ -67,4 +67,32 @@ This system is based on bash.
 > This help is over.
 >
 6. Some help of Crond...
+> if your server had installed the service crond, look at ~~Following Information~~   
+> In the bash, you can exec some commands to view, modify even delete the crontab tasks, following are the Commands   
+>> <code>crontab -l</code> is to list all crantab tasks   
+>> <code>crontab -u root -l</code> is to view tasks of User root.
+>> If you want to modify and delete tasks, use this command <code>crontab -e</code> or <code>crontab -u root -e</code>    
+>> After using this command, you will get a interface that is alike to Vim, in fact, This is Vim, you can use it to modify your tasks.   
+>> You can get some information like following.
+>>> <code>
+>>> * * * * * Some Commands...
+>>> </code>
+>> The first \* is meaning minutes, and following is help of it.
+>>> you can use it as a number(0<\*<59), that means a firm minute in an hour   
+>>> you can also use it as (15/\*), that means executing Command once every 15 minutes.
+>>>
+>>> as well as, other \* have same usage.
+>>>
+>>> and from left to right, they mean that minutes, hours, days, months and weeks.   
+>>> This is an example.
+>>> <code>
+>>> \*/15 * 25 * * Exec command...
+>>> </code>
+>>>
+>>> That means every 15 minutes exec minutes run command in 25th every months
+> Help is over, if you need more help, please use Google or Baidu.
+>> <https://www.google.com>    
+>> <https://www.badiu.com>
 
+#### Copyright &copy; 2017 Yangtze University Online
+<yicheng2623825899@gmail.com>
