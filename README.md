@@ -67,7 +67,7 @@ This system is based on bash.
 > This help is over.
 >
 6. Some help of Crond...
-> if your server had installed the service crond, look at ~~Following Information~~   
+> if your server had installed the service crond, look at __Following Information__        
 > In the bash, you can exec some commands to view, modify even delete the crontab tasks, following are the Commands   
 >> <code>crontab -l</code> is to list all crantab tasks   
 >> <code>crontab -u root -l</code> is to view tasks of User root.
