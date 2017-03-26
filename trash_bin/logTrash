@@ -16,7 +16,7 @@ if [ ! -f $log_trash ]; then
 fi
 
 # Achieve parameters and write in the file
-echo $1 $2 $3 $4 >>$log_path/$log_trash
+echo $1 $2 $3>>$log_path/$log_trash
 
 # EOF
 
