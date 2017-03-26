@@ -6,9 +6,11 @@
 # Time 
 Time="$(date +%Y%m%d_%H_%M_%S)"
 
+# Filename
+filename="${file##*/}"
+
 # Trash Bin Folder
 Trash_Bin="/home/.trash/delete"
-del_log="trash_bin_deleted.log"
 
 # Command rm
 realrm="/bin/rm"
@@ -42,12 +44,31 @@ while getopts "bfhiRrt" opt
 echo -ne "Are you sure you want to move the files to the Trash? [Y/N]:\a"
 read reply
 if [ $reply="y" -o $reply="Y" ]; then
-	mv -i $@ $Trash_Bin/$Time_$file
+	mv -f $@ "$Trash_Bin"
 fi
 
-# Create log file to mask the all infomation of the deleted files
-# Absolute Path
+# Mark the deleted file infomation
+# Full Path
 # Delete Time
 # etc.
+mark1="."
+mark2="/"
+if [ "$file"=${file/$mark2} ]; then
+	fullpath="$(pwd)/$file"
+elif [ "$file"!="${file/$mark1}" ]; then
+	fullpath="$(pwd)${file/$mark1}" 
+else 
+	fullpath="$file"
+fi
+echo "The Fullpath pf this file is: $fullpath"
+
+# Output these information to the log file
+# there will be a parameter to replace path of logTrash
+if mv -f $file "$Trash_Bin/$filename"; then
+	$(/root/workspace/trash_bin/logTras.sh  "$filename" "$Time" "$fullpath")
+	echo "File is deleted"
+else
+	echo "The operation is failed"
+fi
 
 # EOF
