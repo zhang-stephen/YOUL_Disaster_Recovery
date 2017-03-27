@@ -79,7 +79,7 @@ This system is based on bash.
 >>> </code>
 >> The first \* is meaning minutes, and following is help of it.
 >>> you can use it as a number(0<\*<59), that means a firm minute in an hour   
->>> you can also use it as (15/\*), that means executing Command once every 15 minutes.
+>>> you can also use it as (\*/15), that means executing Command once every 15 minutes.
 >>>
 >>> as well as, other \* have same usage.
 >>>
@@ -94,5 +94,6 @@ This system is based on bash.
 >> <https://www.google.com>    
 >> <https://www.badiu.com>
 
-#### Copyright &copy; 2017 Yangtze University Online
+#### Copyright &copy; 2017 Yangtze University Online Stark-Zhang All Rights Reserved
+About Author: Stark Zhang, a member of YUOL in 2015, in charge of the Linux servers of Yangtze University
 <yicheng2623825899@gmail.com>
