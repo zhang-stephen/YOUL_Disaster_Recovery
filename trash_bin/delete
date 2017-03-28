@@ -78,7 +78,7 @@ echo "The Fullpath pf this file is: $fullpath"
 # Output these information to the log file
 trash_cmd="/bin"
 if mv -f $file "$Trash_Bin/"; then
-	$($trash_bin/logTrash "$file" "$Time" "$fullpath")
+	$($trash_cmd/logTrash "$file" "$Time" "$fullpath")
 	echo "File is deleted"
 else
 	echo "The operation is failed"
