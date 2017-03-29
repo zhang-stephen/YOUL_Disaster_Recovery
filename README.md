@@ -92,7 +92,7 @@ This system is based on bash.
 >>> That means every 15 minutes exec minutes run command in 25th every months
 > Help is over, if you need more help, please use Google or Baidu.     
 >> <https://www.google.com>    
->> <https://www.badiu.com>
+>> <https://www.baidu.com>
 
 #### Copyright &copy; 2017 Yangtze University Online Stark-Zhang All Rights Reserved
 About Author: Stark Zhang, a member of YUOL in 2015, in charge of the Linux servers of Yangtze University
