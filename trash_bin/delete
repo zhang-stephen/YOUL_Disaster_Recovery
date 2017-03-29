@@ -26,6 +26,7 @@ fi
 if [ $# -eq 0 ]; then
 	echo "Usage: delete file0 [file1 file2...]"
 	echo -e "If this options contain -f, then the script will exec \"rm\" directly"
+	exit 0
 fi
 
 # If options contain the -f, delete the file by rm
