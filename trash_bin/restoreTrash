@@ -6,17 +6,17 @@
 # Declare some parameters
 trash_bin="/home/.trash/delete"
 logfile="/home/.trash/.Trash_bin.log"
-originlPath=$(awk /$filename/'{print $3}' "$logfile")
+originalPath=$(awk /$filename/'{print $3}' "$logfile")
 file=$(awk /$filename/'{print $1}' "$logfile")
 
 # Output some information
-echo "You will restore $file to $originlPath/$file"
-echo "Are you sure do that?[Y/N]:"
+echo -ne "You will restore $file to "$originalPath/$file""
+echo -ne "Are you sure do that?[Y/N]:"
 
 # read reply
 read reply 
-if [$reply = 'y' -o $reply = "Y"]; then
-    $(mv -b "$trash_bin/$file" $originlPath)
+if [ $reply = 'y' -o $reply = "Y" ]; then
+    $(mv -b "$trash_bin/$file" $originalPath)
     $(sed -i /$file/'d' "$logfile")
 else
     echo "No file restored"
