@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# This is a scrpit to restore deleted files not removed files.
+# If you use delete -f, you cannot restore it again!
+
+# Declare some parameters
+trash_bin="/home/.trash/delete"
+logfile="/home/.trash/.Trash_bin.log"
+originalPath=$(awk /$filename/'{print $3}' "$logfile")
+file=$(awk /$filename/'{print $1}' "$logfile")
+
+# Output some information
+echo -ne "You will restore $file to "$originalPath/$file""
+echo -ne "Are you sure do that?[Y/N]:"
+
+# read reply
+read reply 
+if [ $reply = 'y' -o $reply = "Y" ]; then
+    $(mv -b "$trash_bin/$file" $originalPath)
+    $(sed -i /$file/'d' "$logfile")
+else
+    echo "No file restored"
+fi
+
+# EOF
